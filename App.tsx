@@ -13,9 +13,6 @@ declare var html2canvas: any;
 
 const App: React.FC = () => {
   const initialCoverageArea = '200'; // Used for fallback in calculatedRadiusForViz
-  const initialBuildingLength = '50'; // Not directly used for reset anymore
-  const initialBuildingWidth = '30';  // Not directly used for reset anymore
-
   const [coverageAreaInput, setCoverageAreaInput] = useState<string>('');
   const [buildingLength, setBuildingLength] = useState<string>('');
   const [buildingWidth, setBuildingWidth] = useState<string>('');
@@ -166,6 +163,9 @@ IMPORTANTE: Devuelve tu respuesta ÚNICAMENTE como un array JSON de objetos, don
     
     try {
       const response: GenerateContentResponse = await ai.models.generateContent(requestPayload);
+      if (!response.text) {
+        throw new Error("La respuesta de la IA no contiene texto.");
+      }
       let jsonStr = response.text.trim();
       
       const fenceRegex = /^```(?:json)?\s*\n?(.*?)\n?\s*```$/s;
