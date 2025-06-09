@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Placement Optimizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- PDF Generation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <style>
+    /* Custom styles if absolutely necessary, prefer Tailwind classes */
+    body {
+      font-family: 'Inter', sans-serif; /* A common modern sans-serif font */
+    }
+    /* Ensure canvas/SVG elements scale correctly if used directly */
+    .building-visualizer-container svg {
+        width: 100%;
+        height: auto;
+        max-height: 500px; /* Or a suitable max height */
+        border: 1px solid #ccc;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-100">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

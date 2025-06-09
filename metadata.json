@@ -1,0 +1,6 @@
+{
+  "name": "AP Placement Optimizer",
+  "description": "A web application to calculate optimized Access Point (AP) placements within a building based on coverage radius and building dimensions, using a simplified optimization approach inspired by provided pseudocode.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
